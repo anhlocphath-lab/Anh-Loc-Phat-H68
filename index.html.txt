@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hồ Sơ Năng Lực - Công Ty TNHH TM Anh Lộc Phát H68</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #154ba6;   /* Màu xanh dương của dàn xe H68 */
+            --accent-color: #a60f24;    /* Màu đỏ đô chuẩn từ logo H68 */
+            --dark-color: #242424;      /* Màu đen xám từ logo H68 */
+            --light-color: #f8fafc;
+            --text-color: #334155;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--accent-color);
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        header h1 span {
+            color: var(--accent-color);
+        }
+
+        header p {
+            font-size: 1.1rem;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+
+        section {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: var(--dark-color);
+            font-size: 1.4rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2 i {
+            color: var(--accent-color);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f1f5f9;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        li strong {
+            min-width: 150px;
+            color: var(--dark-color);
+        }
+
+        li i {
+            color: var(--primary-color);
+            margin-right: 10px;
+            margin-top: 5px;
+            width: 15px;
+            text-align: center;
+        }
+
+        .motto {
+            background: #fdf2f4;
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            color: var(--accent-color);
+            text-align: center;
+            font-weight: bold;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+            margin-top: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        .org-box {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .node-main {
+            background: var(--primary-color);
+            color: white;
+            padding: 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .node-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 10px;
+        }
+
+        .node-sub {
+            background: white;
+            padding: 10px;
+            border: 1.5px solid var(--primary-color);
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .card {
+            background: #f0f7ff;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            border: 1px solid #bae6fd;
+        }
+
+        /* --- GALLERY STYLE --- */
+        .image-placeholder {
+            background-color: #f1f5f9;
+            border: 2px dashed #cbd5e1;
+            border-radius: 6px;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 15px;
+            color: #64748b;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .image-placeholder:hover {
+            border-color: var(--primary-color);
+            background-color: #f0f7ff;
+            color: var(--primary-color);
+        }
+
+        .image-placeholder i {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+
+        .image-placeholder span {
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: var(--accent-color);
+        }
+
+        footer {
+            background: var(--dark-color);
+            color: #94a3b8;
+            text-align: center;
+            padding: 25px 20px;
+            font-size: 0.85rem;
+            margin-top: 20px;
+            border-top: 4px solid var(--accent-color);
+        }
+
+        @media (max-width: 992px) {
+            .grid-3 { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.4rem; }
+            section { padding: 15px; }
+            li { flex-direction: column; }
+            li strong { margin-bottom: 3px; }
+            .grid-3 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Công Ty TNHH Thương Mại Anh Lộc Phát <span>H68</span></h1>
+        <p>Chất Lượng Tạo Niềm Tin</p>
+    </header>
+
+    <div class="container">
+
+        <section>
+            <h2><i class="fa-solid fa-file-text"></i> Giới Thiệu Chung</h2>
+            <p style="font-weight: bold; margin-bottom: 10px;">Kính gửi Quý khách hàng!</p>
+            <p style="margin-bottom: 12px; text-align: justify;">
+                Công ty TNHH TM Anh Lộc Phát H68 được thành lập vào ngày 15 tháng 06 năm 2022 trong lúc sự phát triển và bùng nổ của xe du lịch hợp đồng tại Hải Phòng. Đặc biệt là sau thời kỳ dịch Covid kéo dài hơn hai năm ở trên thế giới và cả Việt Nam, nhu cầu đi du lịch trở lại bắt đầu bùng nổ khá mạnh.
+            </p>
+            <p style="margin-bottom: 12px; text-align: justify;">
+                Tiền thân công ty là một hộ kinh doanh cá thể hoạt động trong lĩnh vực vận tải hơn 15 năm trước. Với sự phát triển của nền kinh tế Hải Phòng trong những năm gần đây cùng với sự nỗ lực vươn lên của cá nhân, đơn vị đã chính thức thành lập nên Công ty TNHH Thương mại Anh Lộc Phát H68.
+            </p>
+            <p style="margin-bottom: 12px; text-align: justify;">
+                Ban đầu với nhiều khó khăn bỡ ngỡ với chỉ vài chiếc xe nhưng với sự năng động và nhạy bén trong kinh doanh, hiện tại công ty chúng tôi đã phát triển với hơn 50 xe các loại đủ sức phục vụ cho các đoàn vận tải trong và ngoài nước.
+            </p>
+            <div class="motto">
+                Phương châm hoạt động: “Chất lượng tạo niềm tin”
+            </div>
+        </section>
+
+        <section>
+            <h2><i class="fa-solid fa-id-card"></i> Tư Cách Pháp Nhân & Dịch Vụ</h2>
+            <div class="grid">
+                <div>
+                    <h3 style="color: var(--primary-color); margin-bottom: 10px;">Thông Tin Pháp Lý</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-building"></i><strong>Tên đầy đủ:</strong> CÔNG TY TNHH THƯƠNG MẠI ANH LỘC PHÁT H68</li>
+                        <li><i class="fa-solid fa-globe"></i><strong>Tên nước ngoài:</strong> ANH LỘC PHÁT H68 TRADING</li>
+                        <li><i class="fa-solid fa-font"></i><strong>Tên viết tắt:</strong> ANH LOC PHAT H68</li>
+                        <li><i class="fa-solid fa-location-dot"></i><strong>Trụ sở chính:</strong> Số 12/138 Hai Bà Trưng, P. An Biên, Q. Lê Chân, TP. Hải Phòng</li>
+                        <li><i class="fa-solid fa-barcode"></i><strong>Mã số thuế:</strong> 0202164233</li>
+                        <li><i class="fa-solid fa-phone"></i><strong>Điện thoại:</strong> 0986.576.756</li>
+                        <li><i class="fa-solid fa-envelope"></i><strong>Email:</strong> locphath68@gmail.com</li>
+                        <li><i class="fa-solid fa-user-tie"></i><strong>Đại diện:</strong> Ông Nguyễn Hải Anh - Giám đốc</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: var(--primary-color); margin-bottom: 10px;">Lĩnh Vực Hoạt Động</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-circle-check"></i> Vận tải hành khách bằng xe khách theo hợp đồng và du lịch</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Hỗ trợ điều hành tour du lịch</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Nhà hàng và dịch vụ ăn uống lưu động</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Hoạt động dịch vụ CNTT liên quan đến máy vi tính</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Kho bãi và lưu giữ hàng hóa</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2><i class="fa-solid fa-sitemap"></i> Cơ Cấu Tổ Chức</h2>
+            <div class="org-box">
+                <div class="node-main">BAN GIÁM ĐỐC</div>
+                <div class="node-group">
+                    <div class="node-sub">Phòng Kế Toán - Tài Chính</div>
+                    <div class="node-sub">Phòng Điều Hành</div>
+                    <div class="node-sub">Phòng Kinh Doanh</div>
+                    <div class="node-sub">Đội Xe</div>
+                    <div class="node-sub">Xưởng Sửa Chữa + Rửa Xe</div>
+                </div>
+            </div>
+            <p style="margin-top: 15px; font-size: 0.95rem; text-align: justify;">
+                Giám đốc hiện tại của công ty có trên 20 năm kinh nghiệm trong ngành vận tải, giữ chức vụ <strong>Phó chủ tịch Hiệp Hội Du Lịch Hải Phòng</strong> kiêm Trưởng ban kiểm tra của Hiệp Hội.
+            </p>
+        </section>
+
+        <section>
+            <h2><i class="fa-solid fa-bus"></i> Năng Lực Đội Xe & Tài Chính</h2>
+            <p style="margin-bottom: 15px;">Vốn điều lệ hiện tại đạt <strong>30.000.000.000 đồng</strong>. Sở hữu đội xe đông đảo hơn 50 xe đời mới phục vụ chuyên nghiệp.</p>
+            
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Loại Xe</th>
+                            <th>Số Lượng</th>
+                            <th>Tiêu Chuẩn Kỹ Thuật</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><strong>Xe 45 chỗ</strong></td>
+                            <td>30 xe</td>
+                            <td rowspan="4" style="vertical-align: middle; text-align: justify; background: #fff;">
+                                Toàn bộ xe đều mới sản xuất từ <strong>2023 - 2025</strong>, gồm cả các dòng xe nhập khẩu Hàn Quốc. Xe đời mới trang bị đầy đủ âm thanh, micro, karaoke giải trí, rèm che, dây thắt an toàn, được dọn dẹp sạch sẽ, mang màu xanh thương hiệu đặc trưng và có gắn logo H68 trang trọng.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><strong>Xe 29-35 chỗ</strong></td>
+                            <td>8 xe</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><strong>Xe 16 chỗ</strong></td>
+                            <td>5 xe</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><strong>Xe 4-7 chỗ</strong></td>
+                            <td>3 xe</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 style="color: var(--primary-color); font-size: 1.1rem; margin-top: 25px; margin-bottom: 10px;">Kết Quả Kinh Doanh (2024 - 2025)</h3>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Chỉ Tiêu (Đơn vị: Đồng)</th>
+                            <th>Năm 2024</th>
+                            <th>Năm 2025</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Doanh thu</strong></td>
+                            <td>18.570.707.005</td>
+                            <td style="font-weight: bold; color: var(--primary-color);">26.643.072.426</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Giá vốn hàng bán</strong></td>
+                            <td>16.062.354.000</td>
+                            <td>22.370.568.659</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Lợi nhuận</strong></td>
+                            <td>862.350.256</td>
+                            <td>83.951.640</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Nộp ngân sách nhà nước</strong></td>
+                            <td>172.470.051</td>
+                            <td>195.804.266</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Thu nhập bình quân</strong></td>
+                            <td>12.500.000 đ/tháng</td>
+                            <td style="color: #16a34a; font-weight: bold;">14.500.000 đ/tháng</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section>
+            <h2><i class="fa-solid fa-handshake"></i> Khách Hàng & Dự Án Tiêu Biểu</h2>
+            <div class="grid">
+                <div>
+                    <div class="card">
+                        <strong>Hệ thống Saigontourist:</strong> Đối tác vận chuyển khách tàu biển quốc tế lớn nhất cập cảng Tuần Châu - Hạ Long. Cao điểm huy động 70-80 xe/ngày, doanh thu 3 - 4 tỷ đồng/năm.
+                    </div>
+                    <div class="card">
+                        <strong>Khối Khu Công Nghiệp:</strong> Đưa đón công nhân và chuyên gia cho các tập đoàn lớn: LG-Tràng Duệ, Nomura, Vinfast, Bridgestone, Cảng Nam Hải, VSIP... Doanh thu đạt 5 - 6 tỷ đồng/năm.
+                    </div>
+                </div>
+                <div>
+                    <div class="card">
+                        <strong>Sự kiện lớn:</strong> Đưa đón diễn viên Lễ hội Hoa Phượng Đỏ (2023 - 2025), phục vụ Hội khỏe Phù Đổng toàn quốc 2024.
+                    </div>
+                    <div class="card">
+                        <strong>Hợp đồng dài hạn:</strong> Đối tác tin cậy của Liên đoàn Lao động Hải Phòng, Thành Đoàn, Đại học Hàng Hải VN cùng hàng trăm trường học tại Hải Phòng, Quảng Ninh, Hải Dương.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2><i class="fa-solid fa-images"></i> Hình Ảnh Hoạt Động</h2>
+            <p style="margin-bottom: 20px;">Một số hình ảnh ghi lại hoạt động vận tải thực tế và các chương trình xã hội tiêu biểu của H68:</p>
+            <div class="grid-3">
+                
+<div class="card" style="padding: 10px; background: white; border: 1px solid #e2e8f0; border-radius: 6px;">
+                   
+                   <img src="https://i.postimg.cc/Cx44vpcV/IMG-0138.jpg" style="width: 100%; height: auto; border-radius: 4px; display: block;" alt="Ảnh H68">
+                   
+                   <p style="margin-top: 10px; font-size: 0.9rem; text-align: center; color: #64748b; font-weight: bold;">
+                       Hình ảnh đón khách tàu biển tại Cảng Sun - Hạ Long
+                   </p>
+               </div>
+                
+
+<div class="card" style="padding: 10px; background: white; border: 1px solid #e2e8f0; border-radius: 6px;">
+                    
+                    <img src="https://i.postimg.cc/L8VVyFxd/IMG-0139.jpg" style="width: 100%; height: auto; border-radius: 4px; display: block;" alt="Ảnh H68">
+                    
+                    <p style="margin-top: 10px; font-size: 0.9rem; text-align: center; color: #64748b; font-weight: bold;">
+                        Công ty liên tục đầu tư thêm xe mới đời cao (2023-2025)  
+                    </p>
+                </div>
+                
+
+<div class="card" style="padding: 10px; background: white; border: 1px solid #e2e8f0; border-radius: 6px;">
+    
+    <img src="https://i.postimg.cc/26TQwQG4/IMG-6555.jpg" style="width: 100%; height: auto; border-radius: 4px; display: block;" alt="Ảnh H68">
+    
+    <p style="margin-top: 10px; font-size: 0.9rem; text-align: center; color: #64748b; font-weight: bold;">
+        Hình ảnh phục vụ kì họp thứ 3 của hội đồng tư vấn kinh doanh APEC
+    </p>
+</div>
+
+                <<div class="card" style="padding: 10px; background: white; border: 1px solid #e2e8f0; border-radius: 6px;">
+                    
+                    <img src="https://i.postimg.cc/t4zzrG28/IMG-0140.jpg" style="width: 100%; height: auto; border-radius: 4px; display: block;" alt="Ảnh H68">
+                    
+                    <p style="margin-top: 10px; font-size: 0.9rem; text-align: center; color: #64748b; font-weight: bold;">
+                        Các xe xếp hàng ngay ngắn chờ đón khách đi tham quan
+                    </p>
+                </div>
+                
+
+              <div class="card" style="padding: 10px; background: white; border: 1px solid #e2e8f0; border-radius: 6px;">
+                  
+                  <img src="https://i.postimg.cc/jdjKqP1t/IMG-0144.jpg" style="width: 100%; height: auto; border-radius: 4px; display: block;" alt="Ảnh H68">
+                  
+                  <p style="margin-top: 10px; font-size: 0.9rem; text-align: center; color: #64748b; font-weight: bold;">
+                        Đội ngũ tài xế được đào tạo bài bản, phục vụ chuyên nghiệp và luôn đặt sự an toàn của khách hàng lên hàng đầu.
+                  </p>
+              </div>
+              
+                <div class="card" style="padding: 10px; background: white; border: 1px solid #e2e8f0; border-radius: 6px;">
+                    
+                    <img src="https://i.postimg.cc/mgfSTNdq/C7253AB9-E2B2-4B55-AC75-C993AFF414FE.png" style="width: 100%; height: auto; border-radius: 4px; display: block;" alt="Ảnh H68">
+                    
+                    <p style="margin-top: 10px; font-size: 0.9rem; text-align: center; color: #64748b; font-weight: bold;">
+                       Hình ảnh đoàn xe Vship nối dài trên tuyến đường hiện đại, sẵn sàng đưa hành khách về quê sum họp cùng gia đình dịp Tết. Những chuyến xe an toàn, tiện nghi và đầy nghĩa tình, mang theo không khí đoàn viên trên mọi hành trình mùa xuân
+                    </p>
+                </div>
+                
+
+<div class="card" style="padding: 10px; background: white; border: 1px solid #e2e8f0; border-radius: 6px;">
+                    
+                    <img src="https://i.postimg.cc/nh11df0y/IMG-0141.jpg" style="width: 100%; height: auto; border-radius: 4px; display: block;" alt="Ảnh H68">
+                    
+                    <p style="margin-top: 10px; font-size: 0.9rem; text-align: center; color: #64748b; font-weight: bold;">
+                           Quy mô đội xe hàng đầu khu vực, mang đến giải pháp vận chuyển chuyên nghiệp và đẳng cấp
+                    </p>
+                </div>
+                
+
+            <div class="card" style="padding: 10px; background: white; border: 1px solid #e2e8f0; border-radius: 6px;">
+    
+    <img src="https://i.postimg.cc/Y0MFLbWx/IMG-6945.jpg" style="width: 100%; height: auto; border-radius: 4px; display: block;" alt="Ảnh H68">
+    
+    <p style="margin-top: 10px; font-size: 0.9rem; text-align: center; color: #64748b; font-weight: bold;">
+           Không gian limousine sang trọng với ghế thương gia cao cấp, nội thất hiện đại và hệ thống đèn LED đẳng cấp, mang đến trải nghiệm di chuyển tiện nghi và thoải mái nhất cho khách hàng
+    </p>
+</div>
+
+<div class="card" style="padding: 10px; background: white; border: 1px solid #e2e8f0; border-radius: 6px;">
+    
+    <img src="https://i.postimg.cc/sgJJnCwt/IMG-0142.jpg" style="width: 100%; height: auto; border-radius: 4px; display: block;" alt="Ảnh H68">
+    
+    <p style="margin-top: 10px; font-size: 0.9rem; text-align: center; color: #64748b; font-weight: bold;">
+       Chuyến xe miễn phí phục vụ bà con tham quan triển lãm A80 – hành trình ý nghĩa vì cộng đồng
+    </p>
+</div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Bản quyền thuộc về Công Ty TNHH Thương Mại Anh Lộc Phát H68.</p>
+        <p style="font-size: 0.8rem; margin-top: 5px; color: #64748b;">Địa chỉ: Số 12/138 Hai Bà Trưng, Phường An Biên, Quận Lê Chân, TP Hải Phòng</p>
+    </footer>
+
+</body>
+</html>
